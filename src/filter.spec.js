@@ -10,28 +10,28 @@ describe('Filter', () => {
         expect(filter([1, 2, 3], x => true)).toEqual([1, 2, 3]);
     });
 
-    it('Testing x=> false functionality for a non-empty array', ()=>{
-        expect(filter([1,2,3],x=>false)).toEqual([]);
+    it('Testing x=> false functionality for a non-empty array', () => {
+        expect(filter([1, 2, 3], x => false)).toEqual([]);
     });
 
-    it('Testing x>1 functionality for a non-empty array' ,()=> {
-        const greaterThan1 = (value)=>{
-            if(value>1)
-            return true;
+    it('Testing x>1 functionality for a non-empty array', () => {
+        const greaterThan1 = (value) => {
+            if (value > 1)
+                return true;
             else
-            return false;
+                return false;
         }
-        expect(filter([1,2,3],greaterThan1)).toEqual([2,3]);
+        expect(filter([1, 2, 3], greaterThan1)).toEqual([2, 3]);
     });
 
-    it('Testing upperCase filter for a non-empty array', () =>{
-        const isUpperCase=(value)=>{
-            if(value>='A' && value<='Z')
-            return true;
+    it('Testing upperCase filter for a non-empty array', () => {
+        const isUpperCase = (value) => {
+            if (value >= 'A' && value <= 'Z')
+                return true;
             else
-            return false;
+                return false;
         }
-        expect(filter(['a','A','b','B'],isUpperCase)).toEqual(['A','B']);
+        expect(filter(['a', 'A', 'b', 'B'], isUpperCase)).toEqual(['A', 'B']);
     })
 
 })
